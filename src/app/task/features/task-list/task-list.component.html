@@ -1,0 +1,127 @@
+<section class="bg-gray-50 dark:bg-gray-900 min-h-screen" style="background-image: url('unajmafondo.jpg'); background-size: cover; background-position: center;">
+  <div class="flex flex-col md:flex-row items-center justify-center px-4 py-6 mx-auto min-h-screen">
+  
+    <!-- Botón de Cerrar Sesión en la parte superior derecha -->
+    <button
+      class="absolute top-0 right-0 m-6 bg-orange-600 text-white py-2 px-6 rounded-full shadow-md hover:bg-orange-700 transition duration-300"
+      (click)="logOut()"
+    >
+      Cerrar sesión
+    </button>
+
+    <form class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-lg" (ngSubmit)="onSubmit()">
+      <h2 class="text-3xl font-semibold mb-8 text-center text-gray-800">Crear Perfil</h2>
+
+      <!-- Campo de Nombre -->
+      <div class="mb-6">
+        <label for="firstName" class="block text-sm font-medium text-gray-700">Nombre</label>
+        <input
+          id="firstName"
+          type="text"
+          class="mt-2 p-4 w-full border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-700"
+          [(ngModel)]="profile.firstName"
+          name="firstName"
+          required
+        />
+      </div>
+
+      <!-- Campo de Apellido -->
+      <div class="mb-6">
+        <label for="lastName" class="block text-sm font-medium text-gray-700">Apellido</label>
+        <input
+          id="lastName"
+          type="text"
+          class="mt-2 p-4 w-full border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-700"
+          [(ngModel)]="profile.lastName"
+          name="lastName"
+          required
+        />
+      </div>
+
+      <!-- Campo de Carrera Profesional (select) -->
+      <div class="mb-6">
+        <label for="career" class="block text-sm font-medium text-gray-700">Carrera Profesional</label>
+        <select
+          id="career"
+          class="mt-2 p-4 w-full border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-700"
+          [(ngModel)]="profile.career"
+          name="career"
+          required
+        >
+          <option value="">Seleccione una carrera</option>
+          <option value="EPIS">EPIS</option>
+          <option value="EPIA">EPIA</option>
+          <option value="EPIAM">EPIAM</option>
+          <option value="EPC">EPC</option>
+        </select>
+      </div>
+
+      <!-- Campo de Ciclo (select) -->
+      <div class="mb-6">
+        <label for="cycle" class="block text-sm font-medium text-gray-700">Ciclo</label>
+        <select
+          id="cycle"
+          class="mt-2 p-4 w-full border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-700"
+          [(ngModel)]="profile.cycle"
+          name="cycle"
+          required
+        >
+          <option value="">Seleccione el ciclo</option>
+          <option value="I">I Ciclo</option>
+          <option value="II">II Ciclo</option>
+          <option value="III">III Ciclo</option>
+          <option value="IV">IV Ciclo</option>
+          <option value="V">V Ciclo</option>
+          <option value="VI">VI Ciclo</option>
+          <option value="VII">VII Ciclo</option>
+          <option value="VIII">VIII Ciclo</option>
+          <option value="IX">IX Ciclo</option>
+          <option value="X">X Ciclo</option>
+        </select>
+      </div>
+
+      <!-- Campo de Fecha de Nacimiento -->
+      <div class="mb-6">
+        <label for="birthdate" class="block text-sm font-medium text-gray-700">Fecha de Nacimiento</label>
+        <input
+          id="birthdate"
+          type="date"
+          class="mt-2 p-4 w-full border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-700"
+          [(ngModel)]="profile.birthdate"
+          name="birthdate"
+          required
+        />
+      </div>
+
+      <!-- Campo de Foto -->
+      <div class="mb-6">
+        <label for="photo" class="block text-sm font-medium text-gray-700">Foto de Perfil</label>
+        <input
+          id="photo"
+          type="file"
+          class="mt-2 p-4 w-full border border-gray-300 rounded-xl text-gray-700 file:border-none file:bg-blue-600 file:text-white file:px-4 file:py-2 hover:file:bg-blue-700 cursor-pointer"
+          (change)="onFileSelected($event)"
+          name="photo"
+        />
+      </div>
+
+      <!-- Botón de Continuar -->
+      <div class="mt-8 text-center">
+        <button
+          type="submit"
+          class="w-full bg-orange-600 text-white py-3 px-6 rounded-full shadow-md hover:bg-orange-700 transition duration-300"
+        >
+          Continuar
+        </button>
+      </div>
+
+    </form>
+
+    <!-- Imagen al costado del formulario -->
+    <div class="hidden md:block md:w-2/5 bg-blue-900 text-white rounded-l-lg relative">
+      <img src="prueba.png" alt="fondo" class="w-full h-full object-cover rounded-l-lg">
+      <a class="absolute bottom-4 left-4 text-white font-semibold">si se puede guardar en mi coleccion  necesitaba mas tiempo para hacer lo demas profesor :,C</a>
+    </div>
+
+  </div>
+</section>
